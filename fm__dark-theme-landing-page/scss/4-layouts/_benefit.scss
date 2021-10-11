@@ -1,0 +1,94 @@
+.benefit {
+  background-color: $dark-blue3;
+  padding: 10rem 1.5625rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+
+  @include breakpoint-up (small) {
+    padding: 9.3714vw 5vw 0 7.4285vw;
+    grid-auto-flow: column;
+    justify-items: unset;
+    gap: 4vw;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 19rem;
+    height: 15rem;
+    background: url(../images/illustration-stay-productive.png) no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+
+    @include breakpoint-up (medium) {
+      width: 44.1142vw;
+      height: 34.2857vw;
+    }
+  }
+
+  &__headline {
+    color: $white;
+    font-size: 18px;
+    margin-top: 40px;
+    width: 320px;
+
+    @include breakpoint-up (medium) {
+      width: unset;
+      max-width: 14ch;
+      font-size: 40px;
+      margin-top: 51px;
+    }
+  }
+
+  &__description {
+    color: $light-gray;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    max-width: 41ch;
+    line-height: 1.5;
+
+    @include breakpoint-up (medium) {
+      max-width: 62ch;
+      font-size: 1rem;
+    }
+  }
+
+  &__link {
+    color: $cyan;
+    font-size: 0.78125rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 21rem;
+
+    @include breakpoint-up (medium) {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+
+    img {
+      display: block;
+      margin-left: 0.25rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 40%;
+      height: 2px;
+      transform: translateY(7px);
+      background-color: $cyan;
+
+      @include breakpoint-up (medium) {
+        width: 50%;
+      }
+    }
+
+  }
+}

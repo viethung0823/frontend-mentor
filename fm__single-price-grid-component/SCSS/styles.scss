@@ -1,0 +1,145 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $lightGray;
+  padding: 2rem;
+}
+
+.single-price-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 635px;
+
+  @include breakpoint-up (small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  // share-class
+  .title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: $spacer;
+  }
+  .description {
+    font-size: 1rem;
+    color: $white;
+  }
+
+  // components
+  .benefits {
+    background-color: $white;
+    padding: 2.1875rem 1.5rem;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    @include breakpoint-up (small){
+      padding: 2.5rem;
+      width: 100%;
+    }
+
+    .title {
+      color: $grayishBlue;
+    }
+
+    .ensure {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $brightYellow;
+      margin-bottom: $spacer;
+      max-width: 24ch;
+
+      @include breakpoint-up (small) {
+        max-width: unset;
+      }
+    }
+
+    .description {
+      color: $cyan;
+      max-width: 33ch;
+      line-height: 1.5;
+
+      @include breakpoint-up (small) {
+        max-width: 56ch;
+      }
+    }
+
+  }
+
+  .registry {
+    background-color: $cyan;
+    padding: 1.5625rem 1.5rem;
+
+    @include breakpoint-up (small) {
+      padding: 2.5rem;
+      width: 50%;
+      border-bottom-left-radius: 6px;
+    }
+
+    .price {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: $white;
+      margin-bottom: 0.625rem;
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #6dd6d8;
+        margin-left: 0.625rem;
+      }
+    }
+
+    .description {
+      margin-bottom: $spacer;
+    }
+
+    .cta {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $white;
+      border: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      border-radius: 4px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      background-color: $brightYellow;
+      padding: 1em;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(26, 233, 189);
+        transition: 200ms linear;
+      }
+    }
+  }
+
+  .reasons {
+    background-color: $grayishBlue;
+    padding: 1.625rem 1.5rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    @include breakpoint-up (small) {
+      padding: 2.5rem;
+      width: 50%;
+      border-bottom-left-radius: unset;
+    }
+
+    .description {
+      color: $lightGray;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+  }
+}

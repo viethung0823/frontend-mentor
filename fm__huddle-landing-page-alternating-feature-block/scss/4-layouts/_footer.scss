@@ -1,0 +1,159 @@
+.footer {
+  background-color: $veryDarkCyan;
+  padding: 137px 16px 50px;
+  position: relative;
+
+  @include breakpoint-up (medium) {
+    padding: 150px 40px 60px;
+  }
+
+  &__logo {
+    width: 166px;
+    height: 27px;
+  }
+
+
+  &__article {
+    @include flex (column, center, center);
+    position: absolute;
+    width: 22rem;
+    height: 10.875rem;
+    border-radius: 16px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $white;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -62%);
+
+    @include breakpoint-up (medium) {
+      height: 17.5rem;
+      width: 50rem;
+    }
+
+    .heading {
+      font-size: 1.125rem;
+      max-width: unset;
+
+      @include breakpoint-up (medium) {
+        font-size: 2rem;
+      }
+    }
+
+    .cta {
+      margin-top: 1.5625rem;
+      font-size: 0.625rem;
+      padding: 0.8125rem 3.125rem;
+
+      @include breakpoint-up (medium) {
+        font-size: 20px;
+        padding: 1.4375rem 6.125rem;
+      }
+    }
+  }
+
+  &__content {
+
+    @include breakpoint-up (small) {
+      @include flex (row, initial, center);
+      margin-top: 40px;
+
+      >* {
+        flex: 1;
+      }
+    }
+
+    .contact {
+      margin-top: 28px;
+
+      @include breakpoint-up (small) {
+        margin: unset;
+      }
+
+      .contact-item {
+        display: flex;
+        font-size: 16px;
+        gap: 18px;
+        color: $white;
+        align-items: flex-start;
+
+        &:not(:last-child) {
+          margin-bottom: 27px;
+        }
+
+        &:first-child::before {
+          content: "";
+          width: 25px;
+          height: 18px;
+          display: inline-block;
+          background: url(../images/icon-location.svg) no-repeat;
+          flex-shrink: 0;
+        }
+
+        &:nth-child(2)::before {
+          content: "";
+          width: 25px;
+          height: 18px;
+          display: inline-block;
+          background: url(../images/icon-phone.svg) no-repeat;
+          flex-shrink: 0;
+        }
+
+        &:last-child::before {
+          content: "";
+          width: 25px;
+          height: 18px;
+          display: inline-block;
+          background: url(../images/icon-email.svg) no-repeat;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .link {
+      margin-top: 55px;
+      @include flex (column, initial, initial);
+      gap: 22px;
+
+      @include breakpoint-up (small) {
+        @include flex (row, flex-start, center);
+        margin: unset;
+      }
+
+      &-item {
+        font-size: 18px;
+        color: $white;
+
+
+        &:not(:last-child) {
+          margin-bottom: 18px;
+        }
+      }
+    }
+
+    .social {
+      margin: 58px auto 24px;
+      text-align: center;
+
+      @include breakpoint-up (small) {
+        margin: unset;
+      }
+
+      &-item {
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 12px;
+    color: $white;
+    text-align: center;
+
+    @include breakpoint-up (small) {
+      float: right;
+      font-size: 18px;
+    }
+  }
+}

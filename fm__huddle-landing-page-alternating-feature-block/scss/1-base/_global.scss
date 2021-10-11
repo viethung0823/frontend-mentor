@@ -1,0 +1,11 @@
+html {
+  scrollbar-width: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.filter--white {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(41deg) brightness(106%) contrast(101%);
+}

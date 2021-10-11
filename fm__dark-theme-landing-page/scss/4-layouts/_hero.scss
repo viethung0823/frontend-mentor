@@ -1,0 +1,154 @@
+.hero {
+  background: url(../images/bg-curvy-mobile.svg) no-repeat center 280px;
+  background-size: contain;
+  background-color: $dark-blue1;  
+  padding-top: 1.46875rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint-up (medium) {
+    background: url(../images/bg-curvy-desktop.svg) no-repeat center bottom;
+    background-size: contain;
+    background-color: $dark-blue1;
+    padding-top: 4.625rem;
+  }
+
+  &::before { // dark-blue background
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: $dark-blue3;
+    background-size: contain;
+    width: 100vw;
+    height: 14rem;
+    z-index: -1;
+
+    @include breakpoint-range (small, medium) {
+      height: 4rem;
+    }
+
+    @include breakpoint-up (medium) {
+      height: 1rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1.5625rem 0 1.25rem;
+
+    @include breakpoint-up (small) {
+      align-items: center;
+      margin: 0 2.5625rem 0 5rem;
+    }
+  }
+
+  &__logo {
+    height: 1.5rem;
+
+    @include breakpoint-range (small, medium) {
+      height: 2rem;
+    }
+
+    @include breakpoint-up (medium) {
+      height: 3.25rem;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 25px;
+
+      @include breakpoint-up (medium) {
+        gap: 57px;
+      }
+    }
+  }
+
+  &__link {
+    color: $light-gray;
+    font-size: 0.75rem;
+
+    @include breakpoint-up (small) {
+      font-size: 1rem;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      color: $white;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint-up (medium) { // center like design on desktop
+      padding-left: 38px;
+    }
+
+    &::before { // illustration image
+      content: "";
+      display: block;
+      width: 19rem;
+      height: 15rem;
+      margin-top: 2.6875rem;
+      background: url(../images/illustration-intro.png) no-repeat;
+      background-size: contain;
+
+      @include breakpoint-up (medium) {
+        width: 45rem;
+        height: 33.375rem;
+        margin-top: 72px;
+      }
+    }
+  }
+
+  &__headline {
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    max-width: 22ch;
+    margin-top: 1.125rem;
+
+    @include breakpoint-up (medium) {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      max-width: 30ch;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    color: $light-gray;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    max-width: 37ch;
+    margin-top: 0.9375rem;
+
+    @include breakpoint-up (medium) {
+      font-size: 1.25rem;
+      max-width: 52ch;
+      margin-top: 2rem;
+    }
+  }
+
+  &__cta {
+    font-size: 0.875rem;
+    padding: 1rem 5.0625rem;
+    margin-top: 2rem;
+
+    @include breakpoint-up (medium) {
+      font-size: 1rem;
+      padding: 1.125rem 5.9375rem;
+    }
+  }
+}

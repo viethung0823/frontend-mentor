@@ -1,0 +1,46 @@
+// 740px, 1024px, 1400px
+$breakpoints-up: ("small" : 46.25rem, "medium" : 64rem, "large": 87.5rem);
+
+// 739px, 1023px, 1399px
+$breakpoints-down: ("small" : 46.1875em, "medium" : 63.9375em, "large": 87.4375em);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-range($from, $to) {
+  @media (min-width: map-get($breakpoints-up, $from)) and (max-width: map-get($breakpoints-down, $to)) {
+    @content;
+  }
+}
+
+// fix error message when using grid are inside media query
+@mixin nav-text-grid-area {
+  .text-link:first-child {
+    grid-area: l1;
+  }
+
+  .text-link:nth-child(2) {
+    grid-area: l4;
+  }
+
+  .text-link:nth-child(3) {
+    grid-area: l2;
+  }
+
+  .text-link:nth-child(4) {
+    grid-area: l5;
+  }
+
+  .text-link:last-child {
+    grid-area: l3;
+  }
+}

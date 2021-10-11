@@ -1,0 +1,28 @@
+.heading {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $veryDarkCyan;
+  max-width: 17ch;
+
+  @include breakpoint-up (medium) {
+    text-align: unset;
+    font-size: 2.5rem;
+  }
+}
+
+.description {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  color : $veryDarkCyan;
+  max-width: 33ch;
+  line-height: 1.5;
+
+  @include breakpoint-up (medium) {
+    text-align: unset;
+    font-size: 1.125rem;
+    max-width: 50ch;
+  }
+}

@@ -1,0 +1,128 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+  body {
+    background-color: $veryLightGray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.card {
+  margin:5.5rem 1.25rem;
+
+  @include breakpoint-up(small) {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  &-item {
+    padding: 3.125rem;
+    max-width: 20.4375rem;
+  }
+
+  &-item:first-child {
+    background-color: $brightOrange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    @include breakpoint-up(small) {
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: unset;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/icon-sedans.svg);
+      width: 4.25rem;
+      height: 2.6875rem;
+      margin-bottom: $spacer;
+    }
+
+    .card-btn {
+    color: $brightOrange;
+    }
+
+  }
+
+  &-item:nth-child(2) {
+    background-color: $darkCyan;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image:url(../images/icon-luxury.svg);
+      width: 4.25rem;
+      height: 2.6875rem;
+      margin-bottom: $spacer;
+    }
+
+    .card-btn {
+      color: $darkCyan;
+    }
+
+  }
+
+  &-item:last-child {
+    background-color: $veryDarkCyan;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    @include breakpoint-up(small) {
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: unset;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/icon-luxury.svg);
+      width: 4.25rem;
+      height: 2.6875rem;
+      margin-bottom: $spacer;
+    }
+
+    .card-btn {
+      color: $veryDarkCyan;
+    }
+
+  }
+
+  &-name {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.1875rem;
+    color: $veryLightGray;
+    margin-bottom: $spacer;
+  }
+
+  &-description {
+    font-size: 0.90625rem;
+    line-height: 1.8;
+    color: $transparentWhite;
+    margin-bottom: 1.75rem;
+  }
+
+  &-btn {
+    background-color: $veryLightGray;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.75rem;
+    font-family: 'Lexend Deca',sans-serif;
+    padding: 1.125em 1.875em;
+    cursor: pointer;
+    color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $transparentWhite;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      padding: 11.5px 20.5px;
+      color: $transparentWhite !important;
+    }
+  }
+
+}

@@ -1,0 +1,168 @@
+html {
+  font-size: 100%;
+  font-family: 'Lexend Deca', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  margin: 5.5rem 1.25rem;
+}
+
+@media (min-width: 46.25rem) {
+  .card {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+  }
+}
+
+.card-item {
+  padding: 3.125rem;
+  max-width: 20.4375rem;
+}
+
+.card-item:first-child {
+  background-color: #e38826;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (min-width: 46.25rem) {
+  .card-item:first-child {
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: unset;
+  }
+}
+
+.card-item:first-child::before {
+  content: "";
+  display: block;
+  background-image: url(../images/icon-sedans.svg);
+  width: 4.25rem;
+  height: 2.6875rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-item:first-child .card-btn {
+  color: #e38826;
+}
+
+.card-item:nth-child(2) {
+  background-color: #006970;
+}
+
+.card-item:nth-child(2)::before {
+  content: "";
+  display: block;
+  background-image: url(../images/icon-luxury.svg);
+  width: 4.25rem;
+  height: 2.6875rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-item:nth-child(2) .card-btn {
+  color: #006970;
+}
+
+.card-item:last-child {
+  background-color: #004241;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media (min-width: 46.25rem) {
+  .card-item:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: unset;
+  }
+}
+
+.card-item:last-child::before {
+  content: "";
+  display: block;
+  background-image: url(../images/icon-luxury.svg);
+  width: 4.25rem;
+  height: 2.6875rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-item:last-child .card-btn {
+  color: #004241;
+}
+
+.card-name {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 2.1875rem;
+  color: #f2f2f2;
+  margin-bottom: 2.5rem;
+}
+
+.card-description {
+  font-size: 0.90625rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.75rem;
+}
+
+.card-btn {
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.75rem;
+  font-family: 'Lexend Deca',sans-serif;
+  padding: 1.125em 1.875em;
+  cursor: pointer;
+  color: transparent;
+}
+
+.card-btn:hover {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 11.5px 20.5px;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+/*# sourceMappingURL=styles.css.map */

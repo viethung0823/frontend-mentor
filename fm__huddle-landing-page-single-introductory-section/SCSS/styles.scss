@@ -1,0 +1,133 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+body {
+  min-height: 100vh;
+  background-color: $violet;
+}
+
+.intro {
+  background: url(../images/bg-mobile.svg) no-repeat;
+  background-size: contain;
+  padding: 10vw;
+
+  @include breakpoint-up (small) {
+    background: url(../images/bg-desktop.svg) no-repeat;
+    background-size: cover;
+    padding: 2.5vw;
+  }
+
+  .logo {
+    height: 2.5rem;
+    margin-bottom: 10vw;
+
+    @include breakpoint-up (small) {
+      margin-bottom: 4vw;
+    }
+  }
+
+  .container {
+    @include breakpoint-up (small) {
+      display: flex;
+    }
+
+    &__image {
+      height: 57vw;
+      background: url(../images/illustration-mockups.svg) no-repeat;
+      background-size: cover;
+      margin-bottom: 10vw;
+
+      @include breakpoint-up (small) {
+        width: 60%;
+        height: 33vw;
+        margin-bottom: unset;
+        margin-right: 2rem;
+      }
+    }
+
+    &__text {
+      .heading {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 7vw;
+        text-align: center;
+        color: $white;
+        max-width: 17ch;
+        margin: 0 auto 7vw;
+
+        @include breakpoint-up (small) {
+          font-size: 2.5vw;
+          margin: 0 0 2vw;
+          text-align: unset;
+        }
+      }
+
+      .description {
+        font-size: 4vw;
+        text-align: center;
+        color: $white;
+        max-width: 33ch;
+        margin: 0 auto 7vw;
+        line-height: 1.8;
+
+        @include breakpoint-up (small) {
+          font-size: 1.6vw;
+          max-width: 61ch;
+          margin: 0 0 2vw;
+          text-align: unset;
+          line-height: 1.6;
+        }
+      }
+
+      .cta {
+        display: block;
+        margin: 0 auto 14vw;
+        background-color: $white;
+        outline: none;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        border-radius: 40px;
+        font-size: 5vw;
+        padding: 0.7em 4em;
+        color: $violet;
+        cursor: pointer;
+
+        @include breakpoint-up (small) {
+          font-size: 1.125rem;
+          margin: 0;
+        }
+
+        &:hover {
+          background-color: $softMagenta;
+          color: $white;
+          transition: 200ms linear;
+        }
+
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $white;
+    font-size: 7vw;
+    -webkit-tap-highlight-color: transparent;
+
+    @include breakpoint-up (small) {
+      font-size: 2.5vw;
+      justify-content: flex-end;
+    }
+
+    >*:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    >*:hover {
+      color: $softMagenta;
+    }
+  }
+}

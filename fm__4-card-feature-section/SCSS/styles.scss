@@ -1,0 +1,112 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  padding: 90px 0;
+}
+
+.main {
+  margin: auto;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: $veryDarkBlue;
+  text-align: center;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $veryDarkBlue;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.description {
+  text-align: center;
+  max-width: 32ch;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $grayishBlue;
+  margin: 0 auto 4.5rem;
+
+  @include breakpoint-up (medium) {
+    max-width: 54ch;
+  }
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90vw;
+
+  @include breakpoint-up(medium) {
+    flex-direction: row;
+
+    >*:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .group-2-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .card {
+    border-radius: 6px;
+    background-color: $white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+    padding: 1.875rem;
+    margin-bottom: 1.5rem;
+
+    // elements
+    &__feature {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $veryDarkBlue;
+    }
+
+    &__description {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $grayishBlue;
+      max-width: 31ch;
+      margin-bottom: 32px;
+    }
+
+    &__icon {
+      float: right;
+    }
+
+    // modifiers
+    &--cyan {
+      border-top: 4px solid $cyan;
+    }
+
+    &--red {
+      border-top: 4px solid $red;
+    }
+
+    &--orange {
+      border-top: 4px solid $orange;
+    }
+
+    &--blue {
+      border-top: 4px solid $blue;
+    }
+  }
+}

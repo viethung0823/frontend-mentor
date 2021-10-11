@@ -1,0 +1,212 @@
+html {
+  font-size: 100%;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  background-color: #ecf2f8;
+  padding: 4.4375rem 1.5rem;
+}
+
+@media (min-width: 64rem) {
+  body {
+    padding: 10.25rem;
+  }
+}
+
+.testimonial {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+  margin: auto;
+}
+
+@media (min-width: 64rem) {
+  .testimonial {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "us1 us1 us2 us5" "us3 us4 us4 us5";
+  }
+  .testimonial .user:first-child {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: us1;
+  }
+  .testimonial .user:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: us2;
+  }
+  .testimonial .user:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: us3;
+  }
+  .testimonial .user:nth-child(4) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: us4;
+  }
+  .testimonial .user:last-child {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 4;
+    grid-area: us5;
+  }
+}
+
+.testimonial .user {
+  padding: 1.5rem 1.875rem 2.1875rem;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+}
+
+.testimonial .user:first-child {
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: right 24px top;
+  background-size: 6.4375rem 6.4375rem;
+}
+
+.testimonial .user--bg-violet {
+  background-color: #7541c8;
+}
+
+.testimonial .user--bg-violet .name,
+.testimonial .user--bg-violet .status {
+  color: #cfcfcf;
+}
+
+.testimonial .user--bg-violet .user__quote,
+.testimonial .user--bg-violet .user__review {
+  color: white;
+}
+
+.testimonial .user--bg-gray {
+  background-color: #48556a;
+}
+
+.testimonial .user--bg-gray .name,
+.testimonial .user--bg-gray .status {
+  color: #cfcfcf;
+}
+
+.testimonial .user--bg-gray .user__quote,
+.testimonial .user--bg-gray .user__review {
+  color: white;
+}
+
+.testimonial .user--bg-white {
+  background-color: white;
+}
+
+.testimonial .user--bg-white .name,
+.testimonial .user--bg-white .status,
+.testimonial .user--bg-white .user__quote,
+.testimonial .user--bg-white .user__review {
+  color: #48556a;
+}
+
+.testimonial .user--bg-black {
+  background-color: #19212e;
+}
+
+.testimonial .user--bg-black .name,
+.testimonial .user--bg-black .status {
+  color: #cfcfcf;
+}
+
+.testimonial .user--bg-black .user__quote,
+.testimonial .user--bg-black .user__review {
+  color: white;
+}
+
+.testimonial .user__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.125rem;
+}
+
+.testimonial .user__info .avatar {
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid pink;
+}
+
+.testimonial .user__info .basic .name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.testimonial .user__info .basic .status {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.testimonial .user__quote {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.125rem;
+  max-width: 62.7vw;
+}
+
+.testimonial .user__review {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.7;
+  max-width: 66vw;
+}
+/*# sourceMappingURL=styles.css.map */

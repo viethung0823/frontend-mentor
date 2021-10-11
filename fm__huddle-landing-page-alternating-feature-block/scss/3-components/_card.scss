@@ -1,0 +1,63 @@
+.card {
+  @include flex (column, center, space-evenly);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  height: 130vw;
+  max-height: 32rem;
+
+  &:not(:last-child) {
+    margin-bottom: 42px;
+  }
+
+  @include breakpoint-up (medium) {
+    @include flex (row, center, space-between);
+    height: 27.5rem;
+    padding: 0 8.785714285714286vw;
+
+    &:not(:nth-child(2)) {
+      img {
+        order: 2;
+      }
+    }
+  }
+
+  .text {
+    order: 2;
+
+    .heading {
+      margin: 0 auto 0;
+      font-size: 20px;
+      max-width: unset;
+
+      @include breakpoint-up (medium) {
+        margin: 14px auto 0;
+        font-size: 28px;
+      }
+    }
+
+    .description {
+      margin: 14px auto 0;
+      font-size: 14px;
+      color: $grayishBlue;
+      max-width: 32ch;
+
+      @include breakpoint-up (medium) {
+        font-size: 18px;
+        margin: 9px auto 0;
+        max-width: 47ch;
+      }
+    }
+  }
+
+  img {
+    width: 70%;
+    max-width: 20rem;
+    order: 1;
+
+    @include breakpoint-up (medium) {
+      margin-top: 7px;
+      width: 420px;
+      max-width: unset;
+    }
+  }
+}

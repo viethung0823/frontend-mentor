@@ -1,0 +1,94 @@
+.testimonial {
+  background-color: $dark-blue3;
+  padding: 175px 20px 333px;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  gap: 20px;
+  position: relative;
+
+  @include breakpoint-up (small) {
+    padding: 166px 20px 333px;
+    grid-auto-flow: column;
+    z-index: 1;
+  }
+
+  &__item {
+    background-color: $dark-blue2;
+    border-radius: 8px;
+    padding: 25px 20px;
+    max-width: 279px;
+
+    @include breakpoint-up (small) {
+      max-width: 360px;
+      padding: 39px 28px;
+    }
+
+    &:first-child:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 28px;
+      height: 18px;
+      background: url(../images/bg-quotes.png) no-repeat;
+      background-size: contain;
+      transform: translate(-15px, -42px);
+
+      @include breakpoint-up (small) {
+        width: 54px;
+        height: 45px;
+        transform: translate(-35px, -74px);
+        z-index: -1;
+      }
+    }
+  }
+
+  &__quote {
+    color: $light-gray;
+    font-size: 10px;
+    max-width: 42ch;
+    line-height: 1.8;
+
+    @include breakpoint-up (small) {
+      max-width: 38ch;
+      font-size: 15px;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+
+  &__avatar {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 24px;
+    margin-right: 8px;
+
+    @include breakpoint-up (small) {
+      width: 1.75rem;
+    }
+  }
+
+  &__name {
+    color: $white;
+    font-weight: 700;
+    font-size: 11px;
+
+    @include breakpoint-up (small) {
+      font-size: 12px;
+    }
+  }
+
+  &__position {
+    color: $light-gray;
+    font-size: 8px;
+
+    @include breakpoint-up (small) {
+      font-size: 10px;
+    }
+  }
+}

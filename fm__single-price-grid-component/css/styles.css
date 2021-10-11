@@ -1,0 +1,215 @@
+html {
+  font-size: 100%;
+  font-family: 'Karla', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #e5eff5;
+  padding: 2rem;
+}
+
+.single-price-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 635px;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.single-price-grid .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.875rem;
+}
+
+.single-price-grid .description {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.single-price-grid .benefits {
+  background-color: #fff;
+  padding: 2.1875rem 1.5rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid .benefits {
+    padding: 2.5rem;
+    width: 100%;
+  }
+}
+
+.single-price-grid .benefits .title {
+  color: #98a6bd;
+}
+
+.single-price-grid .benefits .ensure {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c0df34;
+  margin-bottom: 1.875rem;
+  max-width: 24ch;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid .benefits .ensure {
+    max-width: unset;
+  }
+}
+
+.single-price-grid .benefits .description {
+  color: #2ab2af;
+  max-width: 33ch;
+  line-height: 1.5;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid .benefits .description {
+    max-width: 56ch;
+  }
+}
+
+.single-price-grid .registry {
+  background-color: #2ab2af;
+  padding: 1.5625rem 1.5rem;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid .registry {
+    padding: 2.5rem;
+    width: 50%;
+    border-bottom-left-radius: 6px;
+  }
+}
+
+.single-price-grid .registry .price {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single-price-grid .registry .price span {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6dd6d8;
+  margin-left: 0.625rem;
+}
+
+.single-price-grid .registry .description {
+  margin-bottom: 1.875rem;
+}
+
+.single-price-grid .registry .cta {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: #c0df34;
+  padding: 1em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.single-price-grid .registry .cta:hover {
+  background: #1ae9bd;
+  -webkit-transition: 200ms linear;
+  transition: 200ms linear;
+}
+
+.single-price-grid .reasons {
+  background-color: #98a6bd;
+  padding: 1.625rem 1.5rem;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+@media (min-width: 46.25rem) {
+  .single-price-grid .reasons {
+    padding: 2.5rem;
+    width: 50%;
+    border-bottom-left-radius: unset;
+  }
+}
+
+.single-price-grid .reasons .description {
+  color: #e5eff5;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+/*# sourceMappingURL=styles.css.map */

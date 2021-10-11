@@ -1,0 +1,157 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: $lightGrayishBlue;
+  padding: 4.4375rem 1.5rem;
+
+  @include breakpoint-up (medium) {
+    padding: 10.25rem;
+  }
+}
+
+.testimonial {
+  display: grid;
+  gap: 1.5rem;
+  margin: auto;
+
+  @include breakpoint-up (medium) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "us1 us1 us2 us5"
+                         "us3 us4 us4 us5";
+
+    .user:first-child {
+      grid-area: us1;
+    }
+
+    .user:nth-child(2) {
+      grid-area: us2;
+    }
+
+    .user:nth-child(3) {
+      grid-area: us3;
+    }
+
+    .user:nth-child(4) {
+      grid-area: us4;
+    }
+
+    .user:last-child {
+      grid-area: us5;
+    }
+  }
+
+  .user {
+    padding: 1.5rem 1.875rem 2.1875rem;
+    border-radius: 8px;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+
+    &:first-child {
+      background-image: url(../images/bg-pattern-quotation.svg);
+      background-repeat: no-repeat;
+      background-position: right 24px top;
+      background-size: 6.4375rem 6.4375rem;
+    }
+
+    // user modifier 
+    &--bg-violet {
+      background-color: $moderateViolet;
+
+      .name,
+      .status {
+        color: $lightGray;
+      }
+
+      .user__quote,
+      .user__review {
+        color: $white;
+      }
+    }
+
+    &--bg-gray {
+      background-color: $veryDarkGrayishBlue;
+
+      .name,
+      .status {
+        color: $lightGray;
+      }
+
+      .user__quote,
+      .user__review {
+        color: $white;
+      }
+    }
+
+    &--bg-white {
+      background-color: $white;
+
+      .name,
+      .status,
+      .user__quote,
+      .user__review {
+        color: $veryDarkGrayishBlue;
+      }
+    }
+
+    &--bg-black {
+      background-color: $veryDarkBlackishBlue;
+
+      .name,
+      .status {
+        color: $lightGray;
+      }
+
+      .user__quote,
+      .user__review {
+        color: $white;
+      }
+    }
+
+    // user element
+    &__info {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: $spacer;
+
+      .avatar {
+        width: 2rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        border: 2px solid pink;
+      }
+
+      .basic {
+        .name {
+          font-size: 0.8125rem;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+
+        .status {
+          font-size: 0.8125rem;
+          font-weight: 500;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__quote {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: $spacer;
+      max-width: 62.7vw;
+    }
+
+    &__review {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      opacity: 0.7;
+      max-width: 66vw;
+    }
+  }
+}

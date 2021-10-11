@@ -1,0 +1,18 @@
+// BASE
+@import "1-base/reset";
+@import "1-base/global";
+@import "1-base/mixins";
+
+// UTILITIES
+@import "2-utilities/animation";
+@import "2-utilities/variables";
+
+// COMPONENTS
+@import "3-components/paragraph";
+@import "3-components/button";
+@import "3-components/card";
+
+// LAYOUTS
+@import "4-layouts/hero"; 
+@import "4-layouts/card-container"; 
+@import "4-layouts/footer"; 

@@ -1,0 +1,304 @@
+html {
+  font-size: 100%;
+  font-family: 'Spartan', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5rem 1.75rem;
+  background: url(../images/bg-pattern-top-mobile.svg) no-repeat left top, url(../images/bg-pattern-bottom-mobile.svg) no-repeat right bottom;
+  background-size: contain;
+}
+
+@media (min-width: 46.25rem) {
+  body {
+    background: url(../images/bg-pattern-top-desktop.svg) no-repeat left top, url(../images/bg-pattern-bottom-desktop.svg) no-repeat right bottom;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  body {
+    padding: 8.125rem 10.125rem;
+  }
+}
+
+.social-proof {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .text {
+    width: 50%;
+    margin-bottom: 4rem;
+  }
+}
+
+.social-proof .text .heading {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #502050;
+  text-align: center;
+  margin-bottom: 1.125rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .text .heading {
+    text-align: unset;
+    max-width: 11ch;
+  }
+}
+
+@media (min-width: 64rem) {
+  .social-proof .text .heading {
+    font-size: 4vw;
+  }
+}
+
+.social-proof .text .description {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #ee68a4;
+  text-align: center;
+  max-width: 30ch;
+  margin: 0 auto 2.5rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .text .description {
+    text-align: unset;
+    margin: unset;
+    max-width: 37ch;
+  }
+}
+
+@media (min-width: 64rem) {
+  .social-proof .text .description {
+    font-size: 1.4vw;
+  }
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .rating {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.social-proof .rating__item {
+  padding: 0.8125rem 0;
+  width: 20.375rem;
+  background-color: #f7f2f7;
+  border-radius: 8px;
+  margin-bottom: 3.125rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .rating__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1.125rem;
+    width: 23.075rem;
+  }
+  .social-proof .rating__item:nth-child(2) {
+    -webkit-transform: translateX(2.5rem);
+            transform: translateX(2.5rem);
+  }
+  .social-proof .rating__item:last-child {
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+}
+
+.social-proof .rating__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.social-proof .rating__item .star {
+  height: 24px;
+  min-width: 101px;
+  max-width: 101px;
+  background: url(../images/icon-star.svg);
+  background-repeat: space;
+  background-position: center center;
+  margin: 0 auto 0.55rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .rating__item .star {
+    margin: unset;
+    margin-right: 0.75rem;
+  }
+}
+
+.social-proof .rating__item p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #502050;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .review {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.social-proof .review .user {
+  padding: 2.25rem 1.875rem;
+  max-width: 20.375rem;
+  background-color: #502050;
+  border-radius: 8px;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .review .user {
+    max-width: unset;
+  }
+  .social-proof .review .user:nth-child(2) {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+  }
+  .social-proof .review .user:last-child {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+  }
+}
+
+.social-proof .review .user:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .review .user:not(:last-child) {
+    margin-bottom: unset;
+  }
+}
+
+.social-proof .review .user__avatar {
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+@media (min-width: 46.25rem) {
+  .social-proof .review .user__avatar {
+    margin-right: 0.6rem;
+  }
+}
+
+.social-proof .review .user__info {
+  display: inline-block;
+}
+
+.social-proof .review .user__info .name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.375rem;
+}
+
+.social-proof .review .user__info .status {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #ee68a4;
+}
+
+.social-proof .review .user__feedback {
+  font-size: 0.80625rem;
+  color: #fff;
+  max-width: 32ch;
+  line-height: 1.8;
+  margin-top: 1.375rem;
+}
+/*# sourceMappingURL=styles.css.map */

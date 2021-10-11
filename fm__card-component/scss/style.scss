@@ -1,0 +1,129 @@
+@import 'global';
+@import 'variables';
+@import 'mixin';
+
+body {
+  background-color: $veryDarkBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 330px;
+  margin: 8.7rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $darkUnsaturatedBlue;
+
+  @include breakpoint-up(small) {
+    width: 90vw;
+    display: flex;
+    margin: unset;
+    
+    >* {
+      flex-basis: 100%;
+    }
+  }
+
+
+  &__img {
+    min-height: 240px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(180, 0, 153, 0.55);
+    }
+
+    @include breakpoint-up(small) {
+      order: 2;
+      background-position: center;
+    }
+  }
+
+  &__text {
+    margin: 4rem 3.6rem;
+    text-align: center;
+
+     @include breakpoint-up(small) {
+       text-align: unset;
+       margin: 4vw 8vw 4vw 3vw;
+     }
+  }
+
+  &__title {
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: $white;
+    line-height: 1.2;
+    margin-bottom: 1.3rem;
+
+    span {
+      color: $softViolet;
+    }
+
+    @include breakpoint-up(small) {
+    font-size: clamp(1.8rem, calc(1.8rem + ((1vw - 0.74rem) * 2.5758)), 3.5rem);
+    margin-bottom: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    color: $transparentWhite;
+    line-height: 1.8;
+    margin-bottom: 4.5rem;
+
+    @include breakpoint-up(small) {
+      font-size: clamp(1.2rem, calc(1.2rem + ((1vw - 0.74rem) * 1.3636)), 2.1rem);
+      margin-bottom: clamp(3rem, calc(3rem + ((1vw - 0.74rem) * 6.8182)), 7.5rem);
+    }
+  }
+
+  &__stat {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 1.3rem;
+
+     @include breakpoint-up(small) {
+        font-size: clamp(1.5rem, calc(1.5rem + ((1vw - 0.74rem) * 0.7576)), 2rem);
+        margin-bottom: clamp(0.5rem, calc(0.5rem + ((1vw - 0.74rem) * 1.2121)), 1.3rem);
+     }
+  }
+
+  &__stat-heading {
+    font-size: 1.2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: $transparentWhite-lighter;
+    text-transform: uppercase;
+
+    @include breakpoint-up(small) {
+      font-size: clamp(0.8rem, calc(0.8rem + ((1vw - 0.74rem) * 0.6061)), 1.2rem);
+    }
+  }
+
+  &__achievement-container {
+    @include breakpoint-up(small) {
+      display: flex;
+    }
+  }
+
+  &__achievement:not(:last-child) {
+    margin-bottom: 3.6rem;
+
+    @include breakpoint-up(small) {
+      margin-bottom: unset;
+      margin-right: 6.6rem;
+    }
+  }
+}

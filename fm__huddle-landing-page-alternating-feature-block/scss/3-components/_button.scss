@@ -1,0 +1,37 @@
+button,
+.cta {
+  display: block;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 2.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+
+  &-try {
+    color: $veryDarkCyan;
+    background-color: $white;
+    font-size: 0.65625rem;
+    padding: 0.2954em 2.1047em;
+
+    @include breakpoint-up (medium) {
+      font-size: 14px;
+      padding: 13px 65px;
+    }
+  }
+
+  &-start {
+    color: $white;
+    background-color: $pink;
+    font-size: 0.75rem;
+    font-family: unset;
+    padding: 0.9166em 5em;
+
+    @include breakpoint-up (medium) {
+      font-size: 14px;
+      padding: 19px 70px;
+    }
+  }
+}

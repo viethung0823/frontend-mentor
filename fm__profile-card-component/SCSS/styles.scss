@@ -1,0 +1,126 @@
+@import "global";
+@import "variables";
+@import "mixin";
+
+html, body{
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $darkCyan;
+  position: relative;
+  padding-top: 2.5rem;
+
+  &::before {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background: url(../images/bg-pattern-top.svg) no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    position: absolute;
+    bottom: 60%;
+    right: 30%;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    background: url(../images/bg-pattern-bottom.svg) no-repeat;
+    background-size: contain;
+    background-position: center top;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    z-index: -1;
+  }
+
+}
+
+.profile-card {
+  border-radius: 0.625rem;
+  overflow: hidden;
+  background-color: #fff;
+  width: 20.625rem;
+  position: relative;
+
+
+  &__cover-photo {
+    height: 8.75rem;
+    background: url(../images/bg-pattern-card.svg) no-repeat center;
+  }
+
+  &__avatar {
+    height: 6.5625rem;
+    width: 6.5625rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+
+    img {
+      display: block;
+      margin: auto;
+      border-radius: 50%;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 0; //remove white space between inline-block elements
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 4.6875rem;
+
+    .name {
+      display: inline-block;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: $veryDarkDesaturatedBlue;
+      margin-right: 0.625rem;
+      margin-bottom: 0.4375rem;
+    }
+
+    .age {
+      display: inline-block;
+      font-size: 1.125rem;
+      color: $darkGrayishBlue;
+    }
+
+    .country {
+      font-size: 1rem;
+      color: $darkGrayishBlue;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__stats {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1.75rem 0;
+
+    .number {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: $veryDarkDesaturatedBlue;
+      margin-bottom: 0.3125rem;
+    }
+
+    .text {
+      font-size: 0.75rem;
+      color: $darkGray;
+    }
+  }
+}

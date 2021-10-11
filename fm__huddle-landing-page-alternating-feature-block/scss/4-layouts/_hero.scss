@@ -1,0 +1,76 @@
+.hero {
+  background: url(../images/bg-hero-mobile.svg) no-repeat;
+  background-color: #edfbfe;
+  background-size: contain;
+  padding: 1.5rem 1rem 2rem;
+
+  @include breakpoint-up (medium) {
+    background: url(../images/bg-hero-desktop.svg) no-repeat;
+    background-color: #edfbfe;
+    background-size: cover;
+    padding: 3rem 5rem 4rem;
+  }
+
+  &__header {
+    @include flex(row, center, space-between);
+
+    .header-logo {
+      width: 6.5rem;
+
+      @include breakpoint-up (medium) {
+        width: 12.5rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &__content {
+    @include breakpoint-up (small) {
+      @include flex (row, center, space-between);
+    }
+
+    .heading {
+      margin: 5.1875rem auto 0;
+
+      @include breakpoint-up (medium) {
+        margin: 5rem 0 0;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    .description {
+      margin: 1.375rem auto 0;
+
+      @include breakpoint-up (medium) {
+        margin: 1.625rem 0 0;
+      }
+    }
+
+    .cta {
+      margin: 2rem auto 0;
+
+      @include breakpoint-up (medium) {
+        margin: 2rem 0 0;
+      }
+    }
+
+    img {
+      display: block;
+      margin: 3.375rem auto 0;
+      width: 80.5vw;
+      max-width: 37.1875rem;
+      object-fit: cover;
+
+      @include breakpoint-range(small, medium) {
+        max-width: 50%;
+      }
+
+      @include breakpoint-up (medium) {
+        margin: 4rem 0 0;
+        width: 43.5rem;
+        min-width: 50%;
+        max-width: unset;
+      }
+    }
+  }
+}

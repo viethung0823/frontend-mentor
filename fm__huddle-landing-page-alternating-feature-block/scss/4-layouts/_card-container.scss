@@ -1,0 +1,18 @@
+.card-container {
+  padding: 3.75rem 1.25rem 14.1875rem;
+  background-color: $white;
+
+  @include breakpoint-range (small, medium) {
+    @include flex (row, center, center);
+    gap: 1.25rem;
+
+    .card {
+      width: calc(33.33% - 20px);
+    }
+  }
+
+  @include breakpoint-up (medium) {
+    padding: 9.6875rem 6.375rem 21.25rem;
+  }
+
+}

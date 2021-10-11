@@ -1,0 +1,242 @@
+.footer {
+  background-color: $dark-blue4;
+  position: relative;
+  padding: 15.625rem 1.5rem 2.6875rem;
+
+  &__subscribe {
+    position: absolute;
+    background-color: $dark-blue1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 2.375rem 1.6875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 90vw;
+    max-width: 23.4375rem;
+
+    @include breakpoint-up (small) {
+      padding: 2.5rem 4.5rem;
+      max-width: 64rem;
+    }
+
+    .headline {
+      color: $white;
+      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+
+      @include breakpoint-up (small) {
+        font-size: 32px;
+      }
+    }
+
+    .description {
+      color: $light-gray;
+      text-align: center;
+      font-size: 0.875rem;
+      max-width: 35ch;
+      margin-top: 1rem;
+      line-height: 1.6;
+
+      @include breakpoint-up (small) {
+        max-width: 79ch;
+        font-size: 1rem;
+        margin-top: 1.4375rem;
+      }
+    }
+
+    .cta-wrapper {
+      width: 100%;
+
+      @include breakpoint-up (small) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+      }
+    }
+
+    input {
+      border-radius: 40px;
+      background-color: $white;
+      outline: none;
+      border: none;
+      padding: 1rem;
+      font-size: 0.75rem;
+      margin-top: 1.875rem;
+      width: 100%;
+
+      @include breakpoint-up (small) {
+        width: 65%;
+        margin-top: unset;
+      }
+    }
+
+    .cta {
+      width: 100%;
+      margin-top: 1.5rem;
+      text-align: center;
+      padding: 1rem;
+
+      @include breakpoint-up (small) {
+        width: 30%;
+        margin-top: unset;
+      }
+    }
+  }
+
+  &__logo {
+    margin-left: 1rem;
+  }
+
+  &__content {
+    margin-top: 2rem;
+
+    @include breakpoint-up (small) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.25rem;
+
+    @include breakpoint-up (medium) {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 0.5fr 1fr;
+      row-gap: 0;
+      column-gap: 5vw;
+    }
+
+    .address {
+      color: $white;
+      padding-left: 2.625rem;
+      text-indent: -2.625rem;
+      line-height: 1.5;
+
+      @include breakpoint-range(small, medium) {
+        max-width: 32ch;
+      }
+
+      @include breakpoint-up (medium) {
+        grid-column: 1/ 3;
+        grid-row: 1 / 3;
+        max-width: 40ch;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        align-self: center;
+        height: 1.25rem;
+        width: 1.25rem;
+        background: url(../images/icon-location.svg) no-repeat;
+        background-size: contain;
+        margin-right: 1.125rem;
+        transform: translateY(6px);
+      }
+    }
+
+    .phone {
+      max-width: 40ch;
+      color: $white;
+      padding-left: 2.625rem;
+      text-indent: -2.625rem;
+      line-height: 1.5;
+
+      @include breakpoint-up (medium) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        align-self: center;
+        height: 1.25rem;
+        width: 1.25rem;
+        background: url(../images/icon-phone.svg) no-repeat;
+        background-size: contain;
+        margin-right: 1.125rem;
+        transform: translateY(6px);
+      }
+    }
+
+    .email {
+      max-width: 40ch;
+      color: $white;
+      padding-left: 2.625rem;
+      text-indent: -2.625rem;
+      line-height: 1.5;
+
+      @include breakpoint-up (medium) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        align-self: center;
+        height: 1.25rem;
+        width: 1.25rem;
+        background: url(../images/icon-email.svg) no-repeat;
+        background-size: contain;
+        margin-right: 1.125rem;
+        transform: translateY(6px);
+      }
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2.375rem;
+    margin-top: 4.5rem;
+
+    @include breakpoint-up (small) {
+      margin-top: unset;
+      grid-auto-flow: column;
+      gap: 5vw;
+    }
+
+    ul li:not(:last-child) {
+      margin-bottom: 1.125rem;
+    }
+  }
+
+  &__link {
+    font-size: 1rem;
+    color: $light-gray;
+
+    &:hover {
+      color: $white;
+      animation: shake 0.3s ease-in-out;
+    }
+  }
+
+  &__social {
+    margin-top: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+
+    @include breakpoint-up (small) {
+      align-items: flex-start;
+      margin-top: unset;
+    }
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
