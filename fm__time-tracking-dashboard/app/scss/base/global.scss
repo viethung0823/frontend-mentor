@@ -1,0 +1,26 @@
+@use "../utility/breakpoints.scss"as *;
+@use "../utility/function.scss"as *;
+
+.container--m {
+  @include breakpoint-down("small") {
+    width: 87.46%;
+    max-width: rem(384);
+    margin: 0 auto;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint-up("small") {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,261 @@
+@use "../base/color.scss"as *;
+@use "../base/global.scss"as *;
+@use "../utility/function.scss"as *;
+@use "../utility/breakpoints.scss"as *;
+
+main {
+  background-color: #0D1323;
+  min-height: 100vh;
+  padding: rem(82) 0;
+}
+
+.user {
+  @extend .container--m;
+  background-color: #1D204B;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba($color: #000, $alpha: 0.4);
+
+  &__info {
+    @extend .flex;
+    background-color: #5746EA;
+    border-radius: 16px;
+    gap: 18px;
+    padding: 32px 32px 28px 30px;
+
+    @include breakpoint-up("small") {
+      padding: 32px 32px 94px 30px;
+      gap: 32px;
+    }
+  }
+
+  &__avatar {
+    img {
+      width: rem(68);
+      box-shadow: 0 0 0 2px #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    small {
+      color: #A69DFF;
+      font-size: rem(15);
+    }
+
+    p {
+      color: #D3CBFF;
+      font-size: rem(23.5);
+
+      @include breakpoint-up("small") {
+        font-size: rem(36);
+        max-width: 6ch;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  &__timeframe {
+    @extend .flex;
+    justify-content: space-around;
+    height: rem(72);
+
+    @include breakpoint-up("small") {
+      padding: rem(12) rem(30);
+      height: rem(175);
+    }
+
+    p {
+      font-size: rem(18);
+      color: #7073B8;
+
+      &.user__timeframe--active,
+      &:hover {
+        color: #fff;
+        cursor: pointer;
+        transition: 0.4s ease;
+      }
+    }
+
+  }
+}
+
+.catalog {
+  @extend .container--m;
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba($color: #000, $alpha: 0.4);
+  position: relative;
+
+  &.Work {
+    background-color: #FF8B64;
+  }
+
+  &.Play {
+    background-color: #56C2E6;
+  }
+
+  &.Study {
+    background-color: #FF5E7D;
+  }
+
+  &.Exercise {
+    background-color: #4BCF83;
+  }
+
+  &.Social {
+    background-color: #7235D1;
+  }
+
+  &.SelfCare {
+    background-color: #F1C75B;
+  }
+
+  @include breakpoint-down("small") {
+    &:not(:first-child) {
+      margin-top: rem(24);
+    }
+  }
+
+  &__top {
+    height: rem(38);
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      right: 16px;
+      top: -10px;
+      width: rem(82);
+    }
+  }
+
+  &__bottom {
+    border-radius: 12px;
+    background-color: #1D204B;
+    height: rem(122);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 rem(24);
+
+    @include breakpoint-up("small") {
+      height: rem(204);
+    }
+
+    &:hover {
+      background-color: #34397B;
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    right: 0;
+    @extend .center;
+    gap: 3px;
+    cursor: pointer;
+    right: 26px;
+    top: 76px;
+
+    span {
+      border-radius: 50%;
+      width: 5px;
+      aspect-ratio: 1/1;
+      background-color: #B2B5EB;
+    }
+  }
+
+  &__title {
+    p {
+      font-size: rem(18);
+      font-weight: 400;
+      color: #fff;
+    }
+  }
+
+  &__time {
+    @extend .flex;
+    justify-content: space-between;
+    margin-top: rem(6);
+
+    @include breakpoint-up("small") {
+      margin-top: rem(36);
+      gap: 16px;
+    }
+
+    &--current {
+      color: #fff;
+      font-size: rem(32);
+      font-weight: 300;
+
+      @include breakpoint-up("small") {
+        font-size: rem(42);
+      }
+    }
+
+    &--previous {
+      color: #C0C3F0;
+      font-size: 16px;
+    }
+
+
+  }
+}
+
+// layout 
+@include breakpoint-up("small") {
+  main {
+    display: grid;
+    grid-auto-columns: rem(255);
+    grid-auto-rows: rem(242);
+    gap: 32px;
+    justify-content: center;
+    grid-template-areas: "user card1"
+      "user card2"
+      "card3 card4"
+      "card5 card6";
+  }
+
+  .user {
+    grid-area: user;
+  }
+
+  .catalog {
+    &.Work {
+      grid-area: card1;
+    }
+
+    &.Study {
+      grid-area: card2;
+    }
+
+    &.Play {
+      grid-area: card3;
+    }
+
+    &.Exercise {
+      grid-area: card4;
+    }
+
+    &.Social {
+      grid-area: card5;
+    }
+
+    &.Self.Care {
+      grid-area: card6;
+    }
+  }
+}
+
+@include breakpoint-up("medium") {
+  main {
+    display: grid;
+    grid-auto-columns: clamp(12.875rem, calc(12.875rem + ((1vw - 0.64rem) * 11.7371)), 16rem);
+    grid-auto-rows: rem(242);
+    gap: 32px;
+    justify-content: center;
+    grid-template-areas: "user card1 card2 card3"
+      "user card4 card5 card6";
+  }
+
+}
