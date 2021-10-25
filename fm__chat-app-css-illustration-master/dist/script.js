@@ -1,0 +1,2 @@
+const $=document.querySelector.bind(document),$$=document.querySelectorAll.bind(document),inputElm=$("input");function insertAfter(e,t){t.parentNode.insertBefore(e,t.nextSibling)}inputElm.addEventListener("keydown",(e=>{const t=$("#last-message");if(13===e.keyCode&&(e.preventDefault(),""!=inputElm.value)){const e=document.createElement("p");e.classList.add("message","message--sent","message--sent--text"),e.innerText=inputElm.value,insertAfter(e,t),e.scrollIntoView(),t.removeAttribute("id"),e.id="last-message",inputElm.value=""}}));
+//# sourceMappingURL=script.js.map

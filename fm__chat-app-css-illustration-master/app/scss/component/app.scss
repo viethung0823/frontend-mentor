@@ -1,0 +1,295 @@
+@use '../utility/breakpoints.scss'as *;
+@use '../utility/function.scss'as *;
+
+main {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #FAFAFA;
+  display: flex;
+  position: relative;
+
+  @include breakpoint-up("small") {
+    min-height: rem(800);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: #973BFE;
+
+    @include breakpoint-down("small") {
+      border-radius: 0 0 250px 0;
+      width: rem(375);
+      height: rem(508);
+      left: -50%;
+      top: 0;
+    }
+
+    @include breakpoint-up ("small") {
+      border-radius: 0 0 260px 242px;
+      width: 34.7222222222vw;
+      height: 48.6111111111vw;
+      max-width: rem(500);
+      max-height: rem(700);
+      left: -5.83333333%;
+      top: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: #F9F4FA;
+
+    @include breakpoint-down("small") {
+      border-radius: 250px 0 0 0;
+      width: rem(375);
+      height: rem(508);
+      right: -50%;
+      bottom: 0;
+    }
+
+    @include breakpoint-up ("small") {
+      border-radius: 260px 242px 0 0;
+      width: 34.7222222222vw;
+      height: 48.6111111111vw;
+      max-width: rem(500);
+      max-height: rem(700);
+      background-color: #423358;
+      bottom: 0;
+      right: -5.83333333%;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint-down("small") {
+    width: 65.86%;
+    max-width: 484px;
+    padding: rem(64) 0;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  @include breakpoint-up("small") {
+    width: 66%;
+    max-width: rem(725);
+    gap: clamp(24px, calc(1.5rem + ((1vw - 7.68px) * 14.881)), 124px);
+  }
+}
+
+.phone {
+  background-color: #FFFFFF;
+  padding: rem(10);
+  box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.4);
+  width: rem(246);
+  height: rem(506);
+  border-radius: 28px;
+}
+
+.notch {
+  background-image: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  border-radius: 18px 18px 6px 6px;
+  height: rem(66);
+
+  &__camera {
+    background-color: #FFFFFF;
+    border-radius: (0 0 12px 12px);
+    height: rem(18);
+    width: rem(130);
+    margin: 0 auto;
+  }
+
+  &__screen {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: rem(48);
+    padding: 0 rem(10);
+    position: relative;
+  }
+
+  &__back {
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    box-shadow: 0 0 0 2px #FFFFFF;
+    border-radius: 50%;
+    width: 21px;
+    margin: 0 8px 0 6px;
+  }
+
+  &__name {
+    p {
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 0.4;
+      margin-top: 6px;
+    }
+
+    small {
+      color: #CE79FF;
+      font-size: 10px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    color: #FFFFFF;
+    right: 16px;
+    cursor: pointer;
+  }
+}
+
+.screen {
+  background-color: #f5f3f8;
+  border-radius: 0 0 22px 22px;
+  padding: rem(10);
+  height: rem(418);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 8px;
+  max-width: 126px;
+  word-wrap: break-word;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &--sent {
+    align-self: flex-end;
+
+    &--text {
+      background-color: #fff;
+      color: #000;
+      box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.2);
+    }
+
+    &--multyImage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      img {
+        width: rem(40);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &--received {
+    align-self: flex-start;
+
+    &--text {
+      background-color: #ece6f2;
+      color: #8D70A0;
+    }
+
+    &--check {
+      background-image: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+      max-width: unset;
+      width: rem(160);
+      height: rem(32);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .option {
+        display: flex;
+        align-items: center;
+
+        ion-icon {
+          color: #ED63FF;
+          margin-right: 8px;
+          font-size: rem(12);
+        }
+
+        p {
+          color: #fff;
+          font-size: rem(8);
+        }
+
+      }
+
+      .price {
+        color: #fff;
+        font-weight: 500;
+        font-size: rem(12);
+      }
+    }
+  }
+}
+
+.input {
+  height: rem(36);
+  border-radius: 40px;
+  background-color: #fff;
+  margin-top: rem(8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 rem(5);
+
+  input {
+    padding-left: 17px;
+    border: none;
+    outline: none;
+    max-width: 80%;
+
+    &::placeholder {
+      color: #DADADA;
+      font-size: 12px;
+    }
+  }
+
+  ion-icon {
+    color: #412854;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+}
+
+.simple-booking {
+  @include breakpoint-up("small") {
+    width: 450px;
+  }
+
+  h1 {
+    color: #3c2652;
+    margin-bottom: rem(30);
+
+    @include breakpoint-down("small") {
+      text-align: center;
+    }
+  }
+
+  p {
+    color: #bbb6bd;
+    font-size: 13px;
+    line-height: 1.6;
+
+    @include breakpoint-down("small") {
+      text-align: center;
+    }
+  }
+}
