@@ -1,0 +1,24 @@
+@use '../utility/function.scss'as *;
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--horizontal {
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+  }
+}
+
+.filter-tag {
+  box-shadow: 1px 1px 4px rgba($color: #000000, $alpha: 0.2);
+  padding: 8px;
+  border-radius: 2px;
+  font-size: rem(13);
+  font-weight: 600;
+  color: #669C9A;
+  background-color: #F1F7F7;
+  cursor: pointer;
+}
