@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/style.css">
+  <title>API countries</title>
+</head>
+
+<body class="light">
+  <header class="header">
+    <h1>Where in the world?</h1>
+    <div class="btn-toggle">
+    </div>
+  </header>
+
+  <main>
+    <div class="all-countries">
+      <div class="tools">
+        <div class="search-box">
+          <ion-icon name="search-outline" class="search-icon"></ion-icon>
+          <input type="text" name="search-input" id="search-input" placeholder="Search for a country...">
+        </div>
+        <div class="filter-box">
+          <p>Filter by Region</p>
+          <ion-icon name="chevron-down-outline" class="filterIcon"></ion-icon>
+          <ul class="filter-box__dropdown">
+            <li class="filter-box__item">Africa</li>
+            <li class="filter-box__item">America</li>
+            <li class="filter-box__item">Asia</li>
+            <li class="filter-box__item">Europe</li>
+            <li class="filter-box__item">Oceania</li>
+          </ul>
+        </div>
+      </div>
+      <div class="countries">
+      </div>
+    </div>
+
+    <div class="single-country">
+    </div>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="/dist/script.js"></script>
+</body>
+
+</html>

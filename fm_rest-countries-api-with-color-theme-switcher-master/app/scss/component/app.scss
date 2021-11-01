@@ -1,0 +1,439 @@
+@use '../utility/breakpoints.scss'as *;
+@use '../utility/function.scss'as *;
+
+:root {
+  --header-title--light: #fff;
+  --main-page--light: #FAFAFA;
+  --text--light: #000;
+  --header-title--dark: #2B3743;
+  --main-page--dark: #202D36;
+  --text--dark: #fff;
+  --text--hover: #1d91d5eb;
+
+  // light-mode (default)
+  --header-title: var(--header-title--light);
+  --main-page: var(--main-page--light);
+  --text: var(--text--light);
+
+  // dark mode
+  &>body.light {
+    --header-title: var(--header-title--light);
+    --main-page: var(--main-page--light);
+    --text: var(--text--light);
+  }
+
+  &>body.dark {
+    --header-title: var(--header-title--dark);
+    --main-page: var(--main-page--dark);
+    --text: var(--text--dark);
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  @extend .center;
+  justify-content: space-between;
+  background-color: var(--header-title);
+  color: var(--text);
+  height: rem(80);
+  padding: rem(0) rem(15);
+  transition: all 1s ease-out;
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+
+  @include breakpoint-up('small') {
+    padding: rem(0) rem(80);
+  }
+
+  >h1 {
+    font-weight: 800;
+    font-size: rem(14);
+
+    @include breakpoint-up('small') {
+      font-size: rem(24);
+    }
+  }
+
+  >.btn-toggle {
+    @extend .center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.4s ease;
+    font-size: rem(12);
+
+    &:hover {
+      color: var(--text--hover);
+    }
+
+    @include breakpoint-up('small') {
+      font-size: rem(16);
+    }
+  }
+}
+
+main {
+  background-color: var(--main-page);
+  transition: all 1s ease-out;
+  padding: rem(24) 12vw;
+  min-height: calc(100vh - 80px);
+
+  @include breakpoint-up('small') {
+    padding: rem(45) rem(80);
+  }
+
+  .all-countries {
+    >.tools {
+      @include breakpoint-up("small") {
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+      }
+    }
+  }
+
+  .single-country {
+    display: none;
+
+    @include breakpoint-up('small') {
+      grid-template-columns: 1fr 0.8fr;
+      grid-template-areas: "back ."
+        "img info"
+        "img border";
+
+      .btn--back {
+        grid-area: back;
+      }
+
+      img {
+        grid-area: img;
+        margin-right: rem(24);
+      }
+
+      .single-country__info {
+        grid-area: info;
+        align-self: center;
+      }
+
+      .single-country__border {
+        grid-area: border;
+        align-self: center;
+      }
+    }
+
+    .btn--back {
+      @extend .center;
+      justify-content: center;
+      gap: 12px;
+      height: rem(32);
+      width: rem(105);
+      margin-top: rem(18);
+      margin-bottom: rem(64);
+      box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.2);
+      background-color: var(--header-title);
+      color: var(--text);
+      border-radius: 4px;
+      transition: background-color 1s ease-out,
+        color 0.4s ease;
+      cursor: pointer;
+
+      @include breakpoint-up('small') {
+        height: rem(42);
+        width: rem(136);
+        margin-top: rem(32);
+        margin-bottom: rem(80);
+      }
+
+      &:hover {
+        color: var(--text--hover);
+      }
+
+      p {
+        font-size: rem(14);
+        font-weight: 300;
+
+        @include breakpoint-up('small') {
+          font-size: rem(16);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0px 4px 8px rgba($color: #000000, $alpha: 0.2);
+
+      @include breakpoint-up('small') {
+        max-width: rem(560);
+      }
+    }
+
+    .single-country__info {
+      @include breakpoint-down('small') {
+        margin-top: 12vw;
+
+        >p:not(:last-child) {
+          margin-bottom: rem(6);
+        }
+
+        >p:nth-child(6) {
+          margin-bottom: rem(32);
+        }
+      }
+
+      @include breakpoint-up('small') {
+        h2 {
+          font-size: rem(24);
+        }
+
+        p {
+          font-size: rem(16);
+        }
+      }
+    }
+
+    .single-country__border {
+      margin-top: rem(32);
+
+      @include breakpoint-up('small') {
+        display: flex;
+        gap: 12px;
+      }
+
+      h3 {
+        color: var(--text);
+        transition: all 1s ease-out;
+        font-weight: 600;
+        font-size: rem(14);
+
+        @include breakpoint-down('small') {
+          margin-bottom: 8px;
+        }
+      }
+
+      .border-item-container {
+        @extend .center;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        span {
+          box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.2);
+          background-color: var(--header-title);
+          color: var(--text);
+          font-size: rem(14);
+          border-radius: 4px;
+          padding: rem(8) rem(16);
+          transition: 0.4s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(0.98);
+            color: var(--text--hover);
+          }
+
+          @include breakpoint-up('small') {
+            font-size: rem(16)
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-box {
+  @extend .center;
+  background-color: var(--header-title);
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba($color: #000000, $alpha: 0.2);
+  padding: rem(0) rem(30);
+  height: rem(50);
+  transition: all 1s ease-out;
+
+  @include breakpoint-up("small") {
+    width: 50vw;
+    max-width: rem(480);
+    height: rem(56);
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: rem(12);
+    color: var(--text);
+    transition: all 1s ease-out;
+
+    &::placeholder {
+      color: var(--text);
+    }
+
+    @include breakpoint-up("small") {
+      font-size: rem(16);
+    }
+  }
+
+  .search-icon {
+    margin-right: rem(24);
+    --ionicon-stroke-width: 62px;
+    cursor: pointer;
+    color: var(--text);
+
+    &:hover {
+      color: var(--text--hover);
+      transition: 0.4s ease;
+    }
+  }
+}
+
+.filter-box {
+  @extend .center;
+  background-color: var(--header-title);
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba($color: #000000, $alpha: 0.2);
+  width: rem(200);
+  height: rem(56);
+  position: relative;
+  justify-content: space-between;
+  padding: 0 rem(18);
+  cursor: pointer;
+  transition: all 1s ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: rem(6);
+    cursor: pointer;
+    top: 100%;
+    left: 0;
+  }
+
+  @include breakpoint-down('small') {
+    margin-top: rem(40);
+  }
+
+  &:hover>ul {
+    display: block;
+  }
+
+  p {
+    color: var(--text);
+    font-size: rem(12);
+    font-weight: 600;
+
+    @include breakpoint-up("small") {
+      font-size: rem(16);
+    }
+  }
+
+  .filterIcon {
+    --ionicon-stroke-width: 62px;
+    color: var(--text);
+
+    &.clear {
+      &:hover {
+        transition: 0.4s ease;
+        color: var(--text--hover);
+      }
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--header-title);
+    color: var(--text);
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba($color: #000000, $alpha: 0.2);
+    padding: rem(16) rem(18);
+    width: rem(200);
+    left: 0;
+    top: 108%;
+    z-index: 100;
+    transition: background-color 1s ease-out;
+
+    .filter-box__item {
+      font-size: rem(12);
+      border-bottom: 0px;
+      transition: 0.4s ease;
+
+      @include breakpoint-up("small") {
+        font-size: rem(16);
+      }
+
+      &:hover {
+        color: var(--text--hover);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(8);
+      }
+    }
+  }
+}
+
+.countries {
+  margin-top: rem(24);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.country {
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px rgba($color: #000000, $alpha: 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  height: rem(340);
+  width: 100vw;
+  background-color: var(--header-title);
+  transition: background-color 1s ease-out,
+    transform 0.4s ease;
+
+  @include breakpoint-up("small") {
+    width: rem(250);
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  &__flag {
+    height: rem(160);
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba($color: #000000, $alpha: 0.2);
+  }
+
+  &__info {
+    padding: 24px 28px;
+
+    >p:not(:last-child) {
+      margin-bottom: rem(4);
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 800;
+    margin-bottom: rem(16);
+  }
+
+  &__info__item {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+}
