@@ -1,0 +1,140 @@
+@use "../base/index" as *;
+@use "../utility/index" as *;
+
+.destination {
+  padding: rem(42) rem(38.5);
+
+  &__title {
+    @extend .font-condensed--2;
+    text-align: center;
+
+    span {
+      font-weight: 700;
+      margin-right: rem(18);
+      color: #4d4f57;
+    }
+
+    @include breakpoint-up("small") {
+      text-align: unset;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(32);
+    gap: 6.9281045752vw;
+  }
+
+  &__planet {
+    width: rem(170);
+
+    @include breakpoint-mid() {
+      width: rem(300);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem(32);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(26);
+
+    &__item {
+      @extend .font-condensed--3;
+      color: var(--clr-blue);
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: rem(3);
+        background-color: var(--clr-white);
+        opacity: 0.5;
+        bottom: -12px; // fix
+        transition: 0.4s ease width;
+      }
+
+      &.active::before {
+        width: 100%;
+        opacity: unset;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__planet-name {
+    @extend .font-bellefair--2;
+  }
+
+  &__planet-des {
+    @extend .font-barlow;
+    text-align: center;
+    max-width: 62ch;
+    border-bottom: 1px solid #383b4b;
+    padding-bottom: rem(32);
+  }
+
+  &__planetDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include breakpoint-up("small") {
+      flex-direction: row;
+      gap: 80px;
+    }
+  }
+
+  &__planetDetail__item {
+    @extend .font-condensed--3;
+    text-align: center;
+    color: #d0d6f9;
+    span {
+      display: block;
+      margin-top: rem(12);
+      @extend .font-bellefair--0;
+    }
+  }
+}
+
+@include breakpoint-up("medium") {
+  .destination {
+    padding: rem(76) 0;
+
+    &__content {
+      flex-direction: row;
+      align-items: center;
+      margin-top: rem(97);
+      gap: 10vw;
+    }
+
+    &__planet {
+      width: rem(445);
+    }
+
+    &__text {
+      align-items: flex-start;
+    }
+
+    &__planet-des {
+      text-align: unset;
+      max-width: 44ch;
+    }
+  }
+}

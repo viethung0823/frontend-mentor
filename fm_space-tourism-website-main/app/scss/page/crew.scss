@@ -1,0 +1,148 @@
+@use "../base/index" as *;
+@use "../utility/index" as *;
+
+@use "destination" as *;
+
+.crew {
+  padding: rem(42) rem(38.5) 0;
+  @include breakpoint-down("small") {
+    padding: rem(42) 0;
+  }
+  &__title {
+    @extend .destination__title;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint-down("small") {
+      border-top: 1px solid #383b4b;
+    }
+  }
+
+  &__role {
+    @extend .font-bellefair--3;
+    margin-top: rem(32);
+    color: #929398;
+    @include breakpoint-up("small") {
+      margin-top: unset;
+    }
+  }
+
+  &__name {
+    @extend .font-bellefair--5;
+    text-align: center;
+    margin-top: rem(8);
+    color: var(--clr-white);
+  }
+
+  &__bio {
+    @extend .font-barlow;
+    margin-top: rem(16);
+    text-align: center;
+    max-width: 52ch;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(32);
+    gap: 16px;
+    @include breakpoint-down("small") {
+      order: -1;
+    }
+
+    span {
+      width: rem(10);
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: #42444c;
+      cursor: pointer;
+      transition: 0.4s ease;
+      &:hover {
+        background-color: #85868b;
+      }
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__img {
+    @include breakpoint-down("small") {
+      width: unset;
+      max-height: rem(274);
+    }
+    max-width: rem(300);
+    margin-top: rem(32);
+  }
+}
+
+@include breakpoint-mid() {
+  .crew {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__slider {
+      margin-top: rem(40);
+    }
+
+    &__text {
+      margin-top: rem(60);
+    }
+    &__img {
+      width: rem(456);
+      margin-top: rem(40);
+      max-width: unset;
+    }
+  }
+}
+
+@include breakpoint-up("medium") {
+  .crew {
+    &__content {
+      flex-direction: unset;
+      align-items: unset;
+      justify-content: space-between;
+    }
+
+    &__text {
+      align-items: unset;
+      margin-top: rem(54);
+    }
+
+    &__name {
+      margin-top: rem(27);
+      text-align: unset;
+    }
+
+    &__bio {
+      margin-top: rem(27);
+      text-align: unset;
+      max-width: 44ch;
+    }
+
+    &__slider {
+      margin-top: rem(120);
+      padding-bottom: rem(32);
+      span {
+        width: rem(15);
+      }
+    }
+
+    &__img {
+      all: unset;
+    }
+  }
+}

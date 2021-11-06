@@ -1,0 +1,49 @@
+@use "../base/index" as *;
+@use "../utility/index" as *;
+
+:root {
+  > body#home {
+    --bg-m: url(/assets/home/background-home-mobile.jpg) no-repeat;
+    --bg-t: url(/assets/home/background-home-tablet.jpg) no-repeat;
+    --bg-d: url(/assets/home/background-home-desktop.jpg) no-repeat;
+  }
+  > body#technology {
+    --bg-m: url(/assets/technology/background-technology-mobile.jpg) no-repeat;
+    --bg-t: url(/assets/technology/background-technology-tablet.jpg) no-repeat;
+    --bg-d: url(/assets/technology/background-technology-desktop.jpg) no-repeat;
+  }
+  > body#crew {
+    --bg-m: url(/assets/crew/background-crew-mobile.jpg) no-repeat;
+    --bg-t: url(/assets/crew/background-crew-tablet.jpg) no-repeat;
+    --bg-d: url(/assets/crew/background-crew-desktop.jpg) no-repeat;
+  }
+  > body#destination {
+    --bg-m: url(/assets/destination/background-destination-mobile.jpg) no-repeat;
+    --bg-t: url(/assets/destination/background-destination-tablet.jpg) no-repeat;
+    --bg-d: url(/assets/destination/background-destination-desktop.jpg) no-repeat;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  @include breakpoint-down("small") {
+    padding: rem(24);
+    background: var(--bg-m);
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  @include breakpoint-mid() {
+    background: var(--bg-t);
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  @include breakpoint-up("medium") {
+    padding-top: rem(55);
+    padding-left: rem(55);
+    background: var(--bg-d);
+    background-size: cover;
+    background-position: 70% 0%;
+  }
+}

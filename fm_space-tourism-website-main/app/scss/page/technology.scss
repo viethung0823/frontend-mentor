@@ -1,0 +1,147 @@
+@use "../base/index" as *;
+@use "../utility/index" as *;
+
+@use "destination" as *;
+
+:root {
+  --techImg-portrait: url(/assets/technology/image-launch-vehicle-portrait.jpg);
+  --techImg-landscape: url(/assets/technology/image-launch-vehicle-landscape.jpg);
+}
+
+.technology {
+  padding: rem(42) 0;
+
+  &__title {
+    @extend .destination__title;
+
+    @include breakpoint-up("small") {
+      margin-left: rem(38.5);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 34px;
+    margin-top: rem(32);
+    @include breakpoint-mid() {
+      gap: 56px;
+      margin-top: rem(60);
+    }
+  }
+
+  &__text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    span {
+      @extend .font-bellefair--3;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: rem(40);
+      border: 1px solid #4c4d56;
+      display: grid;
+      place-items: center;
+      color: var(--clr-white);
+      cursor: pointer;
+      transition: 0.4s ease;
+      @include breakpoint-mid() {
+        width: rem(60);
+      }
+      &:hover {
+        border-color: #66686e;
+      }
+      &.active {
+        border: unset;
+        background-color: var(--clr-white);
+        color: var(--clr-dark);
+      }
+    }
+  }
+
+  &__heading {
+    @extend .font-condensed--3;
+    span {
+      @extend .font-bellefair--5;
+      margin-top: rem(8);
+      display: inline-block;
+    }
+  }
+
+  &__des {
+    @extend .font-barlow;
+    max-width: 60ch;
+    margin-top: rem(16);
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 2.2/1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: var(--techImg-landscape);
+    background-position: center;
+
+    @include breakpoint-mid() {
+      aspect-ratio: unset;
+      height: rem(340);
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}
+
+@include breakpoint-up("medium") {
+  .technology {
+    &__content {
+      padding-left: rem(38.5);
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: unset;
+      gap: unset;
+    }
+
+    &__heading {
+      span {
+        margin-top: rem(12);
+      }
+    }
+
+    &__text {
+      text-align: unset;
+      flex-direction: unset;
+      gap: 2.8vw;
+      align-items: flex-start;
+    }
+
+    &__des {
+      max-width: 42ch;
+    }
+
+    &__slider {
+      flex-direction: column;
+      gap: 32px;
+      span {
+        width: rem(80);
+      }
+    }
+
+    &__img {
+      width: rem(515);
+      height: rem(527);
+      aspect-ratio: unset;
+      background-image: var(--techImg-portrait);
+    }
+  }
+}

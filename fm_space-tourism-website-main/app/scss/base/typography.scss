@@ -1,0 +1,124 @@
+@use "../utility/index" as *;
+
+.font-barlow {
+  font-family: "Barlow", sans-serif;
+  font-size: rem(15);
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--clr-blue);
+
+  @include breakpoint-mid() {
+    font-size: rem(16);
+  }
+
+  @include breakpoint-up("medium") {
+    font-size: rem(18);
+  }
+}
+
+.font-bellefair {
+  font-family: "Bellefair", serif;
+  color: var(--clr-white);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &--0 {
+    @extend .font-bellefair;
+    font-size: rem(28);
+  }
+
+  &--1 {
+    @extend .font-bellefair;
+    font-size: rem(20);
+    @include breakpoint-up("small") {
+      font-size: rem(32);
+    }
+  }
+
+  &--2 {
+    @extend .font-bellefair;
+    font-size: rem(56);
+    @include breakpoint-mid() {
+      font-size: rem(80);
+    }
+    @include breakpoint-up("medium") {
+      font-size: rem(100);
+    }
+  }
+
+  &--3 {
+    @extend .font-bellefair;
+    font-size: rem(16);
+    @include breakpoint-mid() {
+      font-size: rem(24);
+    }
+    @include breakpoint-up("medium") {
+      font-size: rem(32);
+    }
+  }
+
+  &--4 {
+    @extend .font-bellefair;
+    font-size: rem(80);
+
+    @include breakpoint-up("small") {
+      font-size: rem(150);
+    }
+  }
+
+  &--5 {
+    @extend .font-bellefair;
+    font-size: rem(24);
+    @include breakpoint-mid() {
+      font-size: rem(40);
+    }
+    @include breakpoint-up("medium") {
+      font-size: rem(56);
+    }
+  }
+}
+
+.font-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+  color: var(--clr-white);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &--1 {
+    @extend .font-condensed;
+    font-size: rem(16);
+    letter-spacing: 2.7px;
+
+    @include breakpoint-mid() {
+      font-size: rem(14);
+      letter-spacing: 2.36px;
+    }
+  }
+
+  &--2 {
+    @extend .font-condensed;
+    font-size: rem(16);
+    letter-spacing: 2.7px;
+
+    @include breakpoint-mid() {
+      font-size: rem(20);
+      letter-spacing: 3.38px;
+    }
+
+    @include breakpoint-up("medium") {
+      font-size: rem(28);
+      letter-spacing: 4.72px;
+    }
+  }
+
+  &--3 {
+    @extend .font-condensed;
+    font-size: rem(14);
+    letter-spacing: 2.36px;
+
+    @include breakpoint-up("small") {
+      font-size: rem(16);
+      letter-spacing: 2.7px;
+    }
+  }
+}
